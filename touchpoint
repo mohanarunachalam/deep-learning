@@ -1,0 +1,11 @@
+import tensorflow as tf
+
+a = tf.placeholder(tf.float32)
+b = tf.matmul(a, a)
+a = tf.constant(5.0)
+b = tf.constant(6.0)
+c = a * b
+
+with tf.Session() as sess:
+    file_writer = tf.summary.FileWriter('/Users/tkmal0o/claims/logs', sess.graph)
+    print(sess.run(c))
